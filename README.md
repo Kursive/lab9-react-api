@@ -1,16 +1,26 @@
-# React + Vite
+# Лабораторная работа №9
+# Проект: "Каталог фильмов"
+## Использованный API запрос: <i>https://www.omdbapi.com/</i>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Скриншоты:
+<img width="1920" height="951" alt="image" src="https://github.com/user-attachments/assets/22bf8b05-b88d-43c9-a608-00d036854612" />
+<img width="1920" height="954" alt="image" src="https://github.com/user-attachments/assets/fc4e94d1-f517-4322-960e-e0bdd320dfe7" />
 
-Currently, two official plugins are available:
+# Ответы на вопросы:
+### В моём приложении useEffect отвечает за запрос к API фильмов при загрузке страницы.
+То есть:
+когда компонент впервые появляется на экране,
+useEffect автоматически вызывает функцию, которая получает данные фильмов с API,
+после получения — обновляет состояние и выводит список фильмов.
+Также в useEffect можно обрабатывать ошибки и показывать индикатор загрузки.
+## Какие состояния вы использовали и зачем?
+movies — список фильмов
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Нужен для хранения данных, которые пришли с API.
+Когда он обновляется — интерфейс автоматически перерисовывается.
+loading — индикатор загрузки
+Показывает, что данные ещё подгружаются.
+Например: “Loading…” вместо пустого экрана.
+## Где ИИ помог, а где пришлось разбираться самому?
+### ИИ сформировал основной каркас приложения. Мною был добавлен ключ Api 
+### Важнее всего: структура эндпоинта, формат ответа (Json), ошибки и коды ответов
